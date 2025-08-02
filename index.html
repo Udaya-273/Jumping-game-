@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Balls Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        h1 {
+            color: rgb(251, 3, 3);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+        }
+        
+        #gameCanvas {
+            border: 3px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #87CEEB;
+        }
+        
+        .controls {
+            margin-top: 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .controls p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        
+        .score {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>🏀 Jumping Balls Game 🏀</h1>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    
+    <div class="controls">
+        <p><strong>Controls:</strong></p>
+        <p>SPACEBAR or CLICK - Make balls jump</p>
+        <p>Mouse - Move around to interact</p>
+        <button onclick="game.addBall()">Add Ball</button>
+        <button onclick="game.reset()">Reset Game</button>
+    </div>
+    
+    <div class="score">
+        <p>Balls: <span id="ballCount">3</span></p>
+        <p>Jumps: <span id="jumpCount">0</span></p>
+        <p>💥 Destroyed: <span id="destroyedCount">0</span></p>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
